@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>Galaxy Runner - 2D Space Shooter</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="game-container">
+
+    <!-- Top path/progress bar: shows start -> goal -->
+    <div id="path-bar">
+      <div id="path-track">
+        <div id="path-fill"></div>
+        <div id="path-ship-marker">🚀</div>
+      </div>
+      <div id="path-labels">
+        <span>START</span>
+        <span id="level-label">Level 1: Asteroid Belt</span>
+        <span>GOAL 🏁</span>
+      </div>
+    </div>
+
+    <!-- HUD: hearts, coins, power meter -->
+    <div id="hud">
+      <div id="hearts"></div>
+      <div id="coins">🪙 <span id="coin-count">0</span></div>
+      <div id="power-meter">
+        <div id="power-fill"></div>
+      </div>
+    </div>
+
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Overlays -->
+    <div id="overlay-start" class="overlay">
+      <h1>GALAXY RUNNER</h1>
+      <p>Dodge obstacles &amp; aliens, collect coins, reach the goal!</p>
+      <button id="btn-play">▶ PLAY</button>
+      <button id="btn-shop">🛒 SHOP</button>
+    </div>
+
+    <div id="overlay-win" class="overlay hidden">
+      <h1>🏆 LEVEL COMPLETE!</h1>
+      <p id="win-summary"></p>
+      <button id="btn-next-level">NEXT LEVEL ▶</button>
+      <button id="btn-win-shop">🛒 SHOP</button>
+    </div>
+
+    <div id="overlay-lose" class="overlay hidden">
+      <h1>💥 SHIP DESTROYED</h1>
+      <p id="lose-summary"></p>
+      <button id="btn-retry">🔁 RETRY</button>
+      <button id="btn-lose-menu">🏠 MENU</button>
+    </div>
+
+    <div id="overlay-shop" class="overlay hidden">
+      <h1>🛒 SHIPYARD</h1>
+      <div id="shop-list"></div>
+      <button id="btn-close-shop">✖ CLOSE</button>
+    </div>
+
+    <!-- Controls: left, right, up, down, power -->
+    <div id="controls">
+      <div id="dpad">
+        <button id="btn-up" class="ctrl-btn">▲</button>
+        <div id="dpad-mid">
+          <button id="btn-left" class="ctrl-btn">◀</button>
+          <button id="btn-down" class="ctrl-btn">▼</button>
+          <button id="btn-right" class="ctrl-btn">▶</button>
+        </div>
+      </div>
+      <button id="btn-power" class="ctrl-btn power-btn">⚡<br/>POWER</button>
+    </div>
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
